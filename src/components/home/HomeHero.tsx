@@ -3,8 +3,17 @@ import Image from "next/image";
 /**
  * 홈 히어로 — 메탈릭 메인 이미지 위에 카피를 얹은 풀블리드 섹션.
  * 상하 화이트 페이드로 #fdfdfd 배경과 자연스럽게 이어진다. (Figma: Hero image + copy)
+ * 카피는 콘텐츠 편집기(site_content)에서 주입되며, props로 전달받는다.
  */
-export default function HomeHero() {
+export default function HomeHero({
+  eyebrow,
+  title,
+  subtitle,
+}: {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+}) {
   return (
     <section className="relative w-full overflow-hidden bg-background">
       <div className="relative aspect-[16/10] max-h-[860px] min-h-[520px] w-full">
@@ -24,16 +33,12 @@ export default function HomeHero() {
         {/* 카피 (하단 중앙) */}
         <div className="absolute inset-0 flex flex-col items-center justify-end px-6 pb-[14%] text-center">
           <p className="font-mono text-[11px] font-medium uppercase tracking-[0.35em] text-white/75">
-            FASHION PORTFOLIO ACADEMY
+            {eyebrow}
           </p>
-          <h1 className="mt-4 text-4xl font-bold leading-[1.25] tracking-tight text-white sm:text-5xl">
-            감각과 완성도가
-            <br />
-            만나는 곳
+          <h1 className="mt-4 whitespace-pre-line text-4xl font-bold leading-[1.25] tracking-tight text-white sm:text-5xl">
+            {title}
           </h1>
-          <p className="mt-5 text-sm tracking-tight text-white/70">
-            감각을, 학교가 읽는 포트폴리오로 —
-          </p>
+          <p className="mt-5 text-sm tracking-tight text-white/70">{subtitle}</p>
         </div>
       </div>
     </section>

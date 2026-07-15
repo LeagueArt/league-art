@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FaqAccordion from "@/components/faq/FaqAccordion";
 import { CTA_ITEM } from "@/lib/site-config";
+import { getSiteContent } from "@/lib/site-content";
 
 export const metadata: Metadata = {
   title: "베네핏 · 자주 묻는 질문",
@@ -9,6 +10,9 @@ export const metadata: Metadata = {
     "리그아트 패션유학학원의 차별점과 자주 묻는 질문 — 수업 장소, 지원 가능 국가, 원서 통합 컨설팅, 준비 기간, 장학금, 포트폴리오 준비 등. 소수정예 1:4 밀착 지도와 Parsons·CSM 출신 지도진.",
   alternates: { canonical: "/faq" },
 };
+
+// 콘텐츠 편집 반영: ISR(최대 5분) + 저장 시 revalidatePath 로 즉시 갱신.
+export const revalidate = 300;
 
 // 리그아트가 특별한 이유 (Figma: Benefits)
 const BENEFITS = [
@@ -113,7 +117,8 @@ const FAQS: { q: string; a: string[] }[] = [
   },
 ];
 
-export default function BenefitPage() {
+export default async function BenefitPage() {
+  const c = await getSiteContent();
   return (
     <div className="mx-auto max-w-6xl px-4 sm:px-6">
       {/* Header */}
@@ -122,11 +127,10 @@ export default function BenefitPage() {
           BENEFIT · FAQ
         </p>
         <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
-          리그아트 베네핏
+          {c["benefit.title"]}
         </h1>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-600">
-          리그아트가 학생에게 제공하는 차별화된 가치와, 가장 많이 받는 질문들을 함께
-          담았습니다.
+          {c["benefit.intro"]}
         </p>
       </header>
 

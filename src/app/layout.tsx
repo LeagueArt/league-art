@@ -5,6 +5,7 @@ import { AuthProvider } from "@/lib/auth-context";
 import "./globals.css";
 import ConditionalChrome from "@/components/layout/ConditionalChrome";
 import JsonLd from "@/components/seo/JsonLd";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import { SITE } from "@/lib/site-config";
 
 // SUITE (스위트) — SIL OFL, 본문 기본 서체 (한글+라틴)
@@ -78,6 +79,7 @@ export default function RootLayout({
       className={`${suite.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-neutral-900">
+        <GoogleAnalytics />
         <JsonLd />
         <AuthProvider>
           <ConditionalChrome>{children}</ConditionalChrome>

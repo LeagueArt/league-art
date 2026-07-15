@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getSiteContent } from "@/lib/site-content";
 
 export const metadata: Metadata = {
   title: "패션 커리큘럼 · 수업 안내",
@@ -6,6 +7,9 @@ export const metadata: Metadata = {
     "리그아트 패션 커리큘럼 — 해외 패션 포트폴리오, 해외대 지원반, 공모전반, 졸업제작반, 온라인 클래스. 학교별 평가 기준에 맞춘 포트폴리오 방향과 의상 메이킹까지 단계별로 지도합니다.",
   alternates: { canonical: "/curriculum" },
 };
+
+// 콘텐츠 편집 반영: ISR(최대 5분) + 저장 시 revalidatePath 로 즉시 갱신.
+export const revalidate = 300;
 
 const CHIPS = [
   { label: "01. 해외 패션 포트폴리오", href: "#c1" },
@@ -119,7 +123,8 @@ const ONLINE = {
   ],
 };
 
-export default function CurriculumPage() {
+export default async function CurriculumPage() {
+  const c = await getSiteContent();
   return (
     <>
       {/* Header — 레드 밴드 */}
@@ -150,7 +155,7 @@ export default function CurriculumPage() {
         {/* Intro */}
         <section>
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-            리그아트는 현실적인 고민을 해결합니다.
+            {c["curriculum.introHeadline"]}
           </h2>
           <p className="mt-5 max-w-4xl text-base leading-relaxed text-neutral-600">
             해외 미대 입시를 준비하는 학생들이 가장 많이 막히는 지점은 단순히 “작품을

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import DirectorSection from "@/components/about/DirectorSection";
+import { getSiteContent } from "@/lib/site-content";
 
 export const metadata: Metadata = {
   title: "리그아트 소개 · 대표원장",
@@ -7,6 +8,9 @@ export const metadata: Metadata = {
     "파슨스 수석 졸업 출신 원장이 직접 지도하는 강남 서초동 리그아트 패션유학학원. 포트폴리오 개발부터 에세이·입시·공모전·진로까지 토탈 케어로 해외 미대 입시를 준비합니다.",
   alternates: { canonical: "/about" },
 };
+
+// 콘텐츠 편집 반영: ISR(최대 5분) + 저장 시 revalidatePath 로 즉시 갱신.
+export const revalidate = 300;
 
 const FOCUS = [
   {
@@ -26,7 +30,8 @@ const FOCUS = [
   },
 ];
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const c = await getSiteContent();
   return (
     <div className="mx-auto max-w-6xl px-4 sm:px-6">
       {/* Header */}
@@ -35,11 +40,10 @@ export default function AboutPage() {
           ABOUT
         </p>
         <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
-          리그아트 소개
+          {c["about.title"]}
         </h1>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-600">
-          해외 명문 미술대학 입학부터 포트폴리오 디벨롭, 졸업 프로젝트, 그리고 글로벌
-          크리에이티브 커리어까지 함께하는 프리미엄 아트 스튜디오입니다.
+          {c["about.intro"]}
         </p>
       </header>
 

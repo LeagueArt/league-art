@@ -1,7 +1,10 @@
 import Link from "next/link";
 import HomeHero from "@/components/home/HomeHero";
 import SelectedWorks from "@/components/home/SelectedWorks";
-import { SITE } from "@/lib/site-config";
+import { getSiteContent } from "@/lib/site-content";
+
+// 콘텐츠 편집 반영: ISR(최대 5분) + 저장 시 revalidatePath 로 즉시 갱신.
+export const revalidate = 300;
 
 const STATS = [
   { value: "1:4", label: "소수정예 (최대 4명)" },
@@ -9,10 +12,15 @@ const STATS = [
   { value: "20+", label: "목표 대학" },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const c = await getSiteContent();
   return (
     <>
-      <HomeHero />
+      <HomeHero
+        eyebrow={c["home.heroEyebrow"]}
+        title={c["home.heroTitle"]}
+        subtitle={c["home.heroSubtitle"]}
+      />
       <SelectedWorks />
 
       {/* Intro — 타입 + 통계 + CTA (Figma: Intro) */}
@@ -26,7 +34,7 @@ export default function Home() {
           <span className="text-accent">포트폴리오</span>로 증명합니다
         </h2>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-600">
-          {SITE.description}
+          {c["home.introBody"]}
         </p>
 
         <dl className="mt-8 grid max-w-xl gap-6 border-t border-neutral-200 pt-8 sm:grid-cols-3">
