@@ -45,12 +45,12 @@ export default function FloatingMenu() {
         />
       </a>
 
-      {/* 네이버 블로그 — 공식 로고 (초록 배경 위 크롭) */}
+      {/* 네이버 블로그 — 흰 배경 원 위에 초록 blog 로고 (Figma Desktop 기준) */}
       <a
         href={SOCIAL_LINKS.blog}
         aria-label="네이버 블로그"
         title="네이버 블로그"
-        className={`${BASE} bg-[#03c75a]`}
+        className={`${BASE} bg-white`}
         {...LINK_PROPS}
       >
         <Image
@@ -58,7 +58,7 @@ export default function FloatingMenu() {
           alt=""
           fill
           sizes="48px"
-          className="scale-[1.08] object-cover object-[center_42%]"
+          className="object-contain p-2"
         />
       </a>
 
