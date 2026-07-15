@@ -125,12 +125,6 @@ export default function AdminShell({
           </div>
         </header>
 
-        {/* 데모 안내 */}
-        <div className="border-b border-amber-200 bg-amber-50 px-5 py-2 text-xs leading-relaxed text-amber-800">
-          데모 관리자 — 표시되는 데이터는 예시(mock)이며, 실제 데이터 연동은 백엔드
-          연결 후 활성화됩니다.
-        </div>
-
         <main className="flex-1 p-5 sm:p-8">{children}</main>
       </div>
     </div>

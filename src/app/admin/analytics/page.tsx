@@ -1,16 +1,19 @@
-import {
-  MOCK_MONTHLY_VISITS,
-  MOCK_TRAFFIC_SOURCES,
-  MOCK_TOP_PAGES,
-  MOCK_DEVICES,
-  MOCK_FUNNEL,
-} from "@/lib/mock-admin-data";
+import { FiBarChart2 } from "react-icons/fi";
+
+/**
+ * 방문 통계 — 웹 애널리틱스 연동 전이므로 실데이터 소스가 없다.
+ * 가짜 수치를 노출하지 않고, 연동 시 제공될 지표를 안내하는 정직한 빈 상태를 표시한다.
+ */
+
+const PLANNED = [
+  "월별 · 일별 방문자 추이",
+  "유입 경로 (검색 · 소셜 · 직접 유입)",
+  "인기 페이지 (조회수)",
+  "기기 비율 (모바일 · 데스크탑 · 태블릿)",
+  "상담 전환 퍼널 (방문 → 상담 페이지 → 폼 작성 → 신청 완료)",
+];
 
 export default function AdminAnalyticsPage() {
-  const maxMonthly = Math.max(...MOCK_MONTHLY_VISITS.map((m) => m.visitors));
-  const maxPage = Math.max(...MOCK_TOP_PAGES.map((p) => p.views));
-  const funnelTop = MOCK_FUNNEL[0].count;
-
   return (
     <div className="space-y-8">
       <div>
@@ -20,129 +23,39 @@ export default function AdminAnalyticsPage() {
         </p>
       </div>
 
-      {/* 월별 방문자 */}
-      <div className="rounded-2xl border border-neutral-200 bg-white p-6">
-        <p className="text-sm font-bold">월별 방문자 (최근 6개월)</p>
-        <div className="mt-6 flex items-end justify-between gap-3">
-          {MOCK_MONTHLY_VISITS.map((m) => (
-            <div key={m.month} className="flex flex-1 flex-col items-center gap-2">
-              <span className="text-xs text-neutral-400">
-                {m.visitors.toLocaleString("ko-KR")}
-              </span>
-              <div
-                className="w-full rounded-t bg-accent/80"
-                style={{ height: `${(m.visitors / maxMonthly) * 140}px` }}
-              />
-              <span className="text-xs font-medium text-neutral-500">
-                {m.month}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="grid gap-6 lg:grid-cols-2">
-        {/* 유입 경로 */}
-        <div className="rounded-2xl border border-neutral-200 bg-white p-6">
-          <p className="text-sm font-bold">유입 경로</p>
-          <ul className="mt-5 space-y-3">
-            {MOCK_TRAFFIC_SOURCES.map((s) => (
-              <li key={s.source}>
-                <div className="mb-1 flex items-center justify-between text-sm">
-                  <span className="text-neutral-700">{s.source}</span>
-                  <span className="text-neutral-400">
-                    {s.visitors.toLocaleString("ko-KR")} · {s.pct}%
-                  </span>
-                </div>
-                <div className="h-2 overflow-hidden rounded-full bg-neutral-100">
-                  <div
-                    className="h-full rounded-full bg-accent"
-                    style={{ width: `${s.pct}%` }}
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
+      <div className="rounded-2xl border border-dashed border-neutral-300 bg-neutral-50 p-8">
+        <div className="flex items-center gap-3">
+          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-neutral-400 shadow-sm">
+            <FiBarChart2 size={20} />
+          </span>
+          <div>
+            <p className="text-base font-bold text-neutral-800">
+              애널리틱스 연동이 필요합니다
+            </p>
+            <p className="text-sm text-neutral-500">
+              방문 통계는 추적 데이터가 있어야 표시할 수 있습니다.
+            </p>
+          </div>
         </div>
 
-        {/* 기기 비율 */}
-        <div className="rounded-2xl border border-neutral-200 bg-white p-6">
-          <p className="text-sm font-bold">기기 비율</p>
-          <ul className="mt-5 space-y-4">
-            {MOCK_DEVICES.map((d) => (
-              <li key={d.type}>
-                <div className="mb-1 flex items-center justify-between text-sm">
-                  <span className="text-neutral-700">{d.type}</span>
-                  <span className="font-semibold text-neutral-900">{d.pct}%</span>
-                </div>
-                <div className="h-2 overflow-hidden rounded-full bg-neutral-100">
-                  <div
-                    className="h-full rounded-full bg-neutral-800"
-                    style={{ width: `${d.pct}%` }}
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-6 text-xs leading-relaxed text-neutral-400">
-            모바일 유입이 다수입니다. 모바일 UX 최적화가 전환율에 직접 영향을 줍니다.
-          </p>
-        </div>
-      </div>
+        <p className="mt-6 text-sm leading-relaxed text-neutral-600">
+          현재 사이트에는 방문자 추적 도구가 연결돼 있지 않아 표시할 실데이터가
+          없습니다. GA4, 네이버 애널리틱스, 또는 Vercel Analytics 중 하나를 연동하면
+          아래 지표가 이 화면에 집계됩니다.
+        </p>
 
-      {/* 인기 페이지 */}
-      <div className="rounded-2xl border border-neutral-200 bg-white p-6">
-        <p className="text-sm font-bold">인기 페이지 (조회수)</p>
-        <ul className="mt-5 space-y-3">
-          {MOCK_TOP_PAGES.map((p) => (
-            <li key={p.path} className="flex items-center gap-4">
-              <span className="w-28 shrink-0 text-sm font-medium">{p.label}</span>
-              <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-neutral-100">
-                <div
-                  className="h-full rounded-full bg-accent/70"
-                  style={{ width: `${(p.views / maxPage) * 100}%` }}
-                />
-              </div>
-              <span className="w-16 shrink-0 text-right text-sm text-neutral-500">
-                {p.views.toLocaleString("ko-KR")}
-              </span>
+        <ul className="mt-5 grid gap-2 sm:grid-cols-2">
+          {PLANNED.map((item) => (
+            <li
+              key={item}
+              className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-2.5 text-sm text-neutral-600"
+            >
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+              {item}
             </li>
           ))}
         </ul>
       </div>
-
-      {/* 전환 퍼널 */}
-      <div className="rounded-2xl border border-neutral-200 bg-white p-6">
-        <p className="text-sm font-bold">상담 전환 퍼널</p>
-        <div className="mt-5 space-y-2">
-          {MOCK_FUNNEL.map((f, i) => {
-            const pct = Math.round((f.count / funnelTop) * 100);
-            return (
-              <div key={f.step} className="flex items-center gap-4">
-                <span className="w-32 shrink-0 text-sm text-neutral-700">
-                  {f.step}
-                </span>
-                <div className="h-8 flex-1 overflow-hidden rounded-lg bg-neutral-100">
-                  <div
-                    className="flex h-full items-center rounded-lg bg-accent/80 px-3 text-xs font-semibold text-white"
-                    style={{ width: `${Math.max(pct, 12)}%` }}
-                  >
-                    {f.count.toLocaleString("ko-KR")}
-                  </div>
-                </div>
-                <span className="w-12 shrink-0 text-right text-sm text-neutral-400">
-                  {i === 0 ? "100%" : `${pct}%`}
-                </span>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-
-      <p className="text-xs text-neutral-400">
-        ※ 예시(mock) 데이터입니다. 실제 통계는 애널리틱스(GA4/네이버 애널리틱스 등)
-        연동 후 표시됩니다.
-      </p>
     </div>
   );
 }

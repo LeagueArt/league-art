@@ -7,8 +7,7 @@ import { useState } from "react";
 /**
  * 상담 신청 폼 (Figma: 06 상담 신청 Form).
  * 필수: 이름·연락처·학년·개인정보 동의 / 선택: 현재 학교·희망 학교·추천인.
- * 제출 시 /contact/complete 로 이동.
- * TODO: 폼 제출 백엔드(이메일/폼 서비스/Supabase) 연동 — 현재는 저장 없이 이동만.
+ * 제출 시 /api/consult 에 저장 후 /contact/complete 로 이동.
  */
 
 const GRADES = [
@@ -33,12 +32,44 @@ const INPUT =
 export default function ConsultForm() {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // TODO: 실제 제출 처리 연동. 현재는 저장 없이 완료 페이지로 이동.
+    if (submitting) return;
     setSubmitting(true);
-    router.push("/contact/complete");
+    setError("");
+
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const payload = {
+      name: fd.get("name"),
+      phone: fd.get("phone"),
+      grade: fd.get("grade"),
+      school: fd.get("school"),
+      target: fd.get("target"),
+      referrer: fd.get("referrer"),
+    };
+
+    try {
+      const res = await fetch("/api/consult", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data?.error ?? "신청 접수에 실패했습니다.");
+      }
+      router.push("/contact/complete");
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "신청 접수 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.",
+      );
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -128,6 +159,12 @@ export default function ConsultForm() {
           동의 후 분리 보관됩니다.
         </p>
       </div>
+
+      {error && (
+        <p className="rounded-lg border border-accent/30 bg-accent/5 px-4 py-3 text-sm text-accent">
+          {error}
+        </p>
+      )}
 
       <button
         type="submit"

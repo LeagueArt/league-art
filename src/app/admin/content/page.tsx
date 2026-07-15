@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MOCK_CONTENT } from "@/lib/mock-admin-data";
+import { CONTENT } from "@/lib/content-defaults";
 
 /**
  * 콘텐츠 편집 (UI 목업).
@@ -16,35 +16,35 @@ const SECTIONS: { id: string; label: string; fields: Field[] }[] = [
     id: "home",
     label: "홈",
     fields: [
-      { key: "heroEyebrow", label: "히어로 상단문구", value: MOCK_CONTENT.home.heroEyebrow },
-      { key: "heroTitle", label: "히어로 제목", value: MOCK_CONTENT.home.heroTitle, multiline: true },
-      { key: "heroSubtitle", label: "히어로 부제", value: MOCK_CONTENT.home.heroSubtitle },
-      { key: "introHeadline", label: "인트로 헤드라인", value: MOCK_CONTENT.home.introHeadline },
-      { key: "introBody", label: "인트로 본문", value: MOCK_CONTENT.home.introBody, multiline: true },
+      { key: "heroEyebrow", label: "히어로 상단문구", value: CONTENT.home.heroEyebrow },
+      { key: "heroTitle", label: "히어로 제목", value: CONTENT.home.heroTitle, multiline: true },
+      { key: "heroSubtitle", label: "히어로 부제", value: CONTENT.home.heroSubtitle },
+      { key: "introHeadline", label: "인트로 헤드라인", value: CONTENT.home.introHeadline },
+      { key: "introBody", label: "인트로 본문", value: CONTENT.home.introBody, multiline: true },
     ],
   },
   {
     id: "about",
     label: "소개",
     fields: [
-      { key: "headline", label: "헤드라인", value: MOCK_CONTENT.about.headline },
-      { key: "greeting", label: "원장 인사말(첫 문단)", value: MOCK_CONTENT.about.greeting, multiline: true },
+      { key: "headline", label: "헤드라인", value: CONTENT.about.headline },
+      { key: "greeting", label: "원장 인사말(첫 문단)", value: CONTENT.about.greeting, multiline: true },
     ],
   },
   {
     id: "curriculum",
     label: "커리큘럼",
     fields: [
-      { key: "headline", label: "헤드라인", value: MOCK_CONTENT.curriculum.headline },
-      { key: "intro", label: "인트로 본문", value: MOCK_CONTENT.curriculum.intro, multiline: true },
+      { key: "headline", label: "헤드라인", value: CONTENT.curriculum.headline },
+      { key: "intro", label: "인트로 본문", value: CONTENT.curriculum.intro, multiline: true },
     ],
   },
   {
     id: "benefit",
     label: "베네핏",
     fields: [
-      { key: "headline", label: "헤드라인", value: MOCK_CONTENT.benefit.headline },
-      { key: "intro", label: "인트로 본문", value: MOCK_CONTENT.benefit.intro, multiline: true },
+      { key: "headline", label: "헤드라인", value: CONTENT.benefit.headline },
+      { key: "intro", label: "인트로 본문", value: CONTENT.benefit.intro, multiline: true },
     ],
   },
 ];
