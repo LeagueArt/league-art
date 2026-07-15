@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  /* Figma 디자인 토큰 */
+  --background: #fdfdfd;
+  --foreground: #141414;
+  /* accent: Figma #BF0906 */
+  --accent: #bf0906;
+  --accent-dark: #9a0705;
+}
+
+html,
+body {
+  background-color: #fdfdfd;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --font-sans: var(--font-suite);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-suite);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-suite), Arial, Helvetica, sans-serif;
+}
