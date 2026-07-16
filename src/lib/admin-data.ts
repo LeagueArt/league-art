@@ -1,5 +1,6 @@
 import "server-only";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { STATUS_LABEL, type ConsultStatus } from "@/lib/consult-types";
 
 /**
  * 관리자 화면용 실데이터 조회 (서버 전용, service_role).
@@ -10,13 +11,8 @@ import { createAdminClient } from "@/lib/supabase/admin";
  *    비어있는 값 + ready:false 를 돌려줘 관리자 화면이 죽지 않게 한다.
  */
 
-export type ConsultStatus = "new" | "contacted" | "done";
-
-export const STATUS_LABEL: Record<ConsultStatus, string> = {
-  new: "신규",
-  contacted: "연락완료",
-  done: "상담완료",
-};
+// 하위 호환 재-export (기존 소비자들이 admin-data 에서 가져다 씀).
+export { STATUS_LABEL, type ConsultStatus };
 
 export type Consult = {
   id: string;

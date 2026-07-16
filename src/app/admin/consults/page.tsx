@@ -1,16 +1,12 @@
-import { getConsults, STATUS_LABEL, type ConsultStatus } from "@/lib/admin-data";
+import { getConsults } from "@/lib/admin-data";
+import ConsultStatusSelect from "./ConsultStatusSelect";
 
 /**
  * 상담 신청 목록 (관리자 전용).
  *  - consults 테이블을 service_role 로 조회 (RLS 우회는 서버에서만).
  *  - 공개 상담 폼(/contact → /api/consult)이 저장한 실데이터.
+ *  - 상태(신규/연락완료/상담완료)는 셀렉트로 변경 → /api/admin/consults PATCH.
  */
-
-const STATUS_STYLE: Record<ConsultStatus, string> = {
-  new: "bg-accent/10 text-accent",
-  contacted: "bg-amber-100 text-amber-700",
-  done: "bg-neutral-200 text-neutral-600",
-};
 
 function fmtDate(iso: string): string {
   // KST 기준 YYYY-MM-DD
@@ -82,11 +78,7 @@ export default async function AdminConsultsPage() {
                       {fmtDate(c.created_at)}
                     </td>
                     <td className="px-4 py-3">
-                      <span
-                        className={`whitespace-nowrap rounded-full px-2.5 py-1 text-xs font-medium ${STATUS_STYLE[c.status]}`}
-                      >
-                        {STATUS_LABEL[c.status]}
-                      </span>
+                      <ConsultStatusSelect id={c.id} status={c.status} />
                     </td>
                   </tr>
                 ))}
