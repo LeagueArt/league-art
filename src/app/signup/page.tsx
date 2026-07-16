@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
-import { EQURE_PROVISION } from "@/lib/equre-consent";
+import { EQURE_PROVISION, EQURE_CONSENT_ENABLED } from "@/lib/equre-consent";
 
 /**
  * 회원가입 — Supabase Auth 이메일/비밀번호.
@@ -191,7 +191,8 @@ export default function SignupPage() {
             </span>
           </label>
 
-          {/* [선택] 제9조 제3자 제공 (주식회사 이큐어) — 동의 사실만 기록 */}
+          {/* [선택] 제9조 제3자 제공 (이큐어) — 실제 제공 합의 시에만 노출(플래그) */}
+          {EQURE_CONSENT_ENABLED && (
           <div className="border-t border-neutral-200 pt-3">
             <label className="flex items-start gap-2.5">
               <input
@@ -236,6 +237,7 @@ export default function SignupPage() {
               </p>
             </dl>
           </div>
+          )}
         </div>
 
         {error && <p className="text-sm text-accent">{error}</p>}

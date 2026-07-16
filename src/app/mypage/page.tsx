@@ -5,7 +5,11 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
-import { EQURE_PROVISION, EQURE_CONSENT_TYPE } from "@/lib/equre-consent";
+import {
+  EQURE_PROVISION,
+  EQURE_CONSENT_TYPE,
+  EQURE_CONSENT_ENABLED,
+} from "@/lib/equre-consent";
 
 /**
  * 마이페이지 — 계정 정보 + 이큐어 제3자 제공 동의 관리(동의/철회).
@@ -139,7 +143,8 @@ export default function MyPage() {
         </dl>
       </section>
 
-      {/* 이큐어 제3자 제공 동의 관리 */}
+      {/* 이큐어 제3자 제공 동의 관리 — 실제 제공 합의 시에만 노출(플래그) */}
+      {EQURE_CONSENT_ENABLED && (
       <section className="rounded-2xl border border-neutral-200 p-6">
         <div className="flex items-center justify-between gap-4">
           <h2 className="text-sm font-bold">개인정보 제3자 제공 동의</h2>
@@ -202,6 +207,7 @@ export default function MyPage() {
           회원가입 및 서비스 이용에는 영향이 없습니다.
         </p>
       </section>
+      )}
 
       <p className="text-center text-sm">
         <Link href="/" className="text-neutral-500 hover:text-accent">

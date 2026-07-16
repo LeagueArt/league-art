@@ -9,6 +9,14 @@
  */
 export const EQURE_CONSENT_TYPE = "equre_3rd_party" as const;
 
+/**
+ * 이큐어 제3자 제공 "동의 화면" 노출 여부 (회원가입·마이페이지 UI).
+ * 실제 데이터 제공을 하기로 합의했을 때만 노출한다. 미설정(기본) = 숨김.
+ * ⚠️ 데이터 export 토글(EQURE_SHARING_ENABLED, 서버 전용)과는 별개의 공개 플래그.
+ */
+export const EQURE_CONSENT_ENABLED =
+  process.env.NEXT_PUBLIC_EQURE_CONSENT_ENABLED === "true";
+
 export const EQURE_PROVISION = {
   /** 제공받는 자 */
   provider: "주식회사 이큐어(Equre Co., Ltd.)",
