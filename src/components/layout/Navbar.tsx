@@ -49,7 +49,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-background/85 backdrop-blur-md">
-      <nav className="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-6 md:h-[168px] md:px-14">
+      <nav className="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-6 md:h-[120px] md:px-14">
         <Logo onClick={() => setOpen(false)} />
 
         {/* Desktop: 로고 옆부터 메뉴가 넓게 펼쳐짐 */}
