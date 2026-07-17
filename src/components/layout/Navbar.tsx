@@ -58,7 +58,7 @@ export default function Navbar() {
             key={item.href}
             href={item.href}
             aria-current={isActive(item.href) ? "page" : undefined}
-            className={`hidden whitespace-nowrap text-[clamp(0.875rem,1.9vw,26px)] font-medium transition-colors md:block ${
+            className={`hidden whitespace-nowrap text-[clamp(0.875rem,1.6vw,22px)] font-medium transition-colors md:block ${
               isActive(item.href)
                 ? "text-accent"
                 : "text-neutral-600 hover:text-neutral-900"
@@ -72,14 +72,14 @@ export default function Navbar() {
             <>
               <Link
                 href="/mypage"
-                className="hidden whitespace-nowrap text-[clamp(0.875rem,1.9vw,26px)] font-medium text-neutral-600 transition-colors hover:text-neutral-900 md:block"
+                className="hidden whitespace-nowrap text-[clamp(0.875rem,1.6vw,22px)] font-medium text-neutral-600 transition-colors hover:text-neutral-900 md:block"
               >
                 마이페이지
               </Link>
               <button
                 type="button"
                 onClick={signOut}
-                className="hidden whitespace-nowrap text-[clamp(0.875rem,1.9vw,26px)] font-medium text-neutral-600 transition-colors hover:text-neutral-900 md:block"
+                className="hidden whitespace-nowrap text-[clamp(0.875rem,1.6vw,22px)] font-medium text-neutral-600 transition-colors hover:text-neutral-900 md:block"
               >
                 로그아웃
               </button>
@@ -87,7 +87,7 @@ export default function Navbar() {
           ) : (
             <Link
               href="/login"
-              className="hidden whitespace-nowrap text-[clamp(0.875rem,1.9vw,26px)] font-medium text-neutral-600 transition-colors hover:text-neutral-900 md:block"
+              className="hidden whitespace-nowrap text-[clamp(0.875rem,1.6vw,22px)] font-medium text-neutral-600 transition-colors hover:text-neutral-900 md:block"
             >
               로그인
             </Link>
@@ -95,7 +95,7 @@ export default function Navbar() {
         )}
         <Link
           href={CTA_ITEM.href}
-          className="hidden whitespace-nowrap rounded-full bg-accent px-[clamp(1rem,1.9vw,1.75rem)] py-[clamp(0.5rem,1vw,0.875rem)] text-[clamp(0.875rem,1.9vw,26px)] font-semibold text-white transition hover:bg-accent-dark md:block"
+          className="hidden whitespace-nowrap rounded-full bg-accent px-[clamp(1rem,1.9vw,1.75rem)] py-[clamp(0.5rem,1vw,0.875rem)] text-[clamp(0.875rem,1.6vw,22px)] font-semibold text-white transition hover:bg-accent-dark md:block"
         >
           {CTA_ITEM.label}
         </Link>
