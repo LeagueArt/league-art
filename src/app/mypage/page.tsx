@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { FiGrid, FiArrowRight } from "react-icons/fi";
 import { createClient } from "@/lib/supabase/client";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import {
@@ -26,6 +27,7 @@ export default function MyPage() {
   const [granted, setGranted] = useState(false);
   const [saving, setSaving] = useState(false);
   const [notice, setNotice] = useState("");
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     if (!isSupabaseConfigured()) return;
@@ -52,6 +54,13 @@ export default function MyPage() {
         .limit(1)
         .maybeSingle();
       setGranted(Boolean(data?.granted));
+      // 관리자 여부 확인 → 관리자 콘솔 바로가기 노출
+      try {
+        const res = await fetch("/api/me");
+        if (res.ok) setIsAdmin(Boolean((await res.json())?.isAdmin));
+      } catch {
+        // 무시 — 실패 시 바로가기만 미노출
+      }
       setLoading(false);
     })();
   }, [router]);
@@ -127,6 +136,27 @@ export default function MyPage() {
         </p>
         <h1 className="mt-3 text-3xl font-bold tracking-tight">마이페이지</h1>
       </div>
+
+      {/* 관리자 콘솔 바로가기 (관리자에게만) */}
+      {isAdmin && (
+        <Link
+          href="/admin"
+          className="flex items-center justify-between gap-4 rounded-2xl border border-accent/30 bg-accent/5 px-6 py-4 transition hover:border-accent hover:bg-accent/10"
+        >
+          <span className="flex items-center gap-3">
+            <FiGrid className="text-accent" size={20} />
+            <span>
+              <span className="block text-sm font-bold text-accent">
+                관리자 콘솔
+              </span>
+              <span className="block text-xs text-neutral-500">
+                상담·회원·콘텐츠 관리
+              </span>
+            </span>
+          </span>
+          <FiArrowRight className="text-accent" size={18} />
+        </Link>
+      )}
 
       {/* 계정 정보 */}
       <section className="rounded-2xl border border-neutral-200 p-6">
