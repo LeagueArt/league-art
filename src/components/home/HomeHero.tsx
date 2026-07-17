@@ -48,6 +48,15 @@ export default function HomeHero({
         <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-background to-transparent" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-background to-transparent" />
 
+        {/* 카피 가독성용 스크림 — 카피 영역만 은은하게 어둡게 */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(72% 52% at 50% 74%, rgba(18,18,20,0.55) 0%, rgba(18,18,20,0.26) 50%, rgba(18,18,20,0) 80%)",
+          }}
+        />
+
         {/* 카피 (하단 중앙) */}
         <div className="absolute inset-0 flex flex-col items-center justify-end px-6 pb-[14%] text-center">
           <p className="font-mono text-[11px] font-medium uppercase tracking-[0.35em] text-white/75">
