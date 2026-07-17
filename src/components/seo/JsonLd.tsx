@@ -27,6 +27,9 @@ export default function JsonLd() {
     },
     areaServed: "KR",
     knowsAbout: [
+      "강남 패션유학",
+      "강남 패션유학학원",
+      "패션 포트폴리오 학원",
       "해외 미대 입시",
       "패션 포트폴리오",
       "유학 포트폴리오",

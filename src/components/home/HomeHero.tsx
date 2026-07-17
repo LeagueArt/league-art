@@ -37,7 +37,7 @@ export default function HomeHero({
       <div className="relative aspect-[16/10] max-h-[860px] min-h-[520px] w-full">
         <Image
           src="/images/hero/hero-main.jpg"
-          alt="리그아트 — 감각과 완성도가 만나는 곳"
+          alt="강남 서초동 리그아트 패션유학학원 — 감각과 완성도가 만나는 곳"
           fill
           priority
           sizes="100vw"
