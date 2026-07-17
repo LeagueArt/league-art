@@ -17,8 +17,10 @@ export const CONTENT_SECTIONS: ContentSection[] = [
     label: "홈",
     fields: [
       { key: "home.heroEyebrow", label: "히어로 상단문구" },
-      { key: "home.heroTitle", label: "히어로 제목", multiline: true },
-      { key: "home.heroSubtitle", label: "히어로 부제" },
+      { key: "home.heroTitle", label: "히어로 제목 A(국문)", multiline: true },
+      { key: "home.heroSubtitle", label: "히어로 부제 A(국문)" },
+      { key: "home.heroTitleEn", label: "히어로 제목 B(영문)", multiline: true },
+      { key: "home.heroSubtitleEn", label: "히어로 부제 B(영문)" },
       { key: "home.introBody", label: "인트로 본문", multiline: true },
     ],
   },
@@ -118,6 +120,8 @@ export const CONTENT_DEFAULTS: Record<string, string> = {
   "home.heroEyebrow": "FASHION PORTFOLIO ACADEMY",
   "home.heroTitle": "감각과 완성도가\n만나는 곳",
   "home.heroSubtitle": "감각을, 학교가 읽는 포트폴리오로 —",
+  "home.heroTitleEn": "Activate Your\nPotential",
+  "home.heroSubtitleEn": "Where craft meets admission —",
   "home.introBody":
     "리그아트는 해외 미대·패션 스쿨 입시를 위한 포트폴리오 전문 스튜디오입니다. 학생의 현재 작업과 목표 학교에 맞춰 가장 현실적인 포트폴리오 방향을 안내합니다.",
   "about.title": "리그아트 소개",

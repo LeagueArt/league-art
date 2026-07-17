@@ -18,8 +18,10 @@ export default async function Home() {
     <>
       <HomeHero
         eyebrow={c["home.heroEyebrow"]}
-        title={c["home.heroTitle"]}
-        subtitle={c["home.heroSubtitle"]}
+        titleA={c["home.heroTitle"]}
+        subtitleA={c["home.heroSubtitle"]}
+        titleB={c["home.heroTitleEn"]}
+        subtitleB={c["home.heroSubtitleEn"]}
       />
       <SelectedWorks />
 
