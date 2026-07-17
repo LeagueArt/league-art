@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -11,6 +12,8 @@ import {
   FiTrendingUp,
   FiExternalLink,
   FiLogOut,
+  FiMenu,
+  FiX,
 } from "react-icons/fi";
 import { useAuth } from "@/lib/auth-context";
 
@@ -38,6 +41,7 @@ export default function AdminShell({
 }) {
   const { signOut } = useAuth();
   const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const isActive = (href: string, exact: boolean) =>
     exact ? pathname === href : pathname.startsWith(href);
@@ -89,23 +93,22 @@ export default function AdminShell({
       <div className="flex min-w-0 flex-1 flex-col">
         {/* Topbar */}
         <header className="flex items-center justify-between gap-4 border-b border-neutral-200 bg-white px-5 py-3">
-          {/* 모바일 네비 */}
-          <nav className="flex items-center gap-1 md:hidden">
-            {NAV.map((item) => {
-              const active = isActive(item.href, item.exact);
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`rounded-md px-3 py-1.5 text-sm font-medium ${
-                    active ? "bg-accent/10 text-accent" : "text-neutral-600"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
+          {/* 모바일: 햄버거 + 브랜드 */}
+          <div className="flex items-center gap-2.5 md:hidden">
+            <button
+              type="button"
+              onClick={() => setMenuOpen((v) => !v)}
+              aria-label="메뉴 열기"
+              aria-expanded={menuOpen}
+              className="flex h-9 w-9 items-center justify-center rounded-md border border-neutral-300 text-neutral-700 transition hover:border-accent hover:text-accent"
+            >
+              {menuOpen ? <FiX size={18} /> : <FiMenu size={18} />}
+            </button>
+            <span className="text-sm font-bold text-accent">
+              LEAGUE ART{" "}
+              <span className="font-medium text-neutral-400">관리자</span>
+            </span>
+          </div>
           <div className="hidden text-sm text-neutral-400 md:block">
             관리자 콘솔
           </div>
@@ -124,6 +127,39 @@ export default function AdminShell({
             </button>
           </div>
         </header>
+
+        {/* 모바일 드롭다운 메뉴 (햄버거 토글) */}
+        {menuOpen && (
+          <nav className="border-b border-neutral-200 bg-white md:hidden">
+            {NAV.map((item) => {
+              const active = isActive(item.href, item.exact);
+              const Icon = item.icon;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className={`flex items-center gap-3 border-b border-neutral-100 px-5 py-3.5 text-sm font-medium transition ${
+                    active
+                      ? "bg-accent/10 text-accent"
+                      : "text-neutral-700 hover:bg-neutral-50"
+                  }`}
+                >
+                  <Icon size={18} />
+                  {item.label}
+                </Link>
+              );
+            })}
+            <Link
+              href="/"
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center gap-3 px-5 py-3.5 text-sm font-medium text-neutral-600 transition hover:bg-neutral-50"
+            >
+              <FiExternalLink size={18} />
+              사이트 보기
+            </Link>
+          </nav>
+        )}
 
         <main className="flex-1 p-5 sm:p-8">{children}</main>
       </div>
