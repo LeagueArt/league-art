@@ -30,3 +30,9 @@ body {
   color: var(--foreground);
   font-family: var(--font-suite), Arial, Helvetica, sans-serif;
 }
+
+/* 히어로 타이핑 커서 깜빡임 */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

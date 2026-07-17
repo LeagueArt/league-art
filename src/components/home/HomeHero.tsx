@@ -4,10 +4,12 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 /**
- * 홈 히어로 — 메탈릭 메인 이미지 위에 카피를 얹은 풀블리드 섹션.
- * Figma "Hero 전환 A(KR) / B(EN)": 제목·부제가 국문↔영문으로 일정 주기마다
- * 크로스페이드 전환된다. 카피는 콘텐츠 편집기(site_content)에서 주입된다.
+ * 홈 히어로 — 메탈릭 이미지 위에 카피를 얹은 풀블리드 섹션.
+ * 제목이 한 글자씩 타이핑되며, 국문(A) ↔ 영문(B)을 번갈아 보여준다.
+ * (Figma "Hero 전환 A/B" + 타이핑 연출). 카피는 콘텐츠 편집기에서 주입.
  */
+type Phase = "typing" | "pausing" | "deleting";
+
 export default function HomeHero({
   eyebrow,
   titleA,
@@ -21,16 +23,41 @@ export default function HomeHero({
   titleB: string;
   subtitleB: string;
 }) {
-  const variants = [
-    { title: titleA, subtitle: subtitleA },
-    { title: titleB, subtitle: subtitleB },
-  ];
-  const [active, setActive] = useState(0);
+  const titles = [titleA, titleB];
+  const subtitles = [subtitleA, subtitleB];
+
+  const [idx, setIdx] = useState(0);
+  const [typed, setTyped] = useState("");
+  const [phase, setPhase] = useState<Phase>("typing");
 
   useEffect(() => {
-    const id = setInterval(() => setActive((v) => (v === 0 ? 1 : 0)), 4000);
-    return () => clearInterval(id);
-  }, []);
+    const full = titles[idx];
+    let t: ReturnType<typeof setTimeout>;
+
+    if (phase === "typing") {
+      if (typed.length < full.length) {
+        t = setTimeout(() => setTyped(full.slice(0, typed.length + 1)), 85);
+      } else {
+        t = setTimeout(() => setPhase("pausing"), 120);
+      }
+    } else if (phase === "pausing") {
+      t = setTimeout(() => setPhase("deleting"), 2400);
+    } else {
+      if (typed.length > 0) {
+        t = setTimeout(() => setTyped(typed.slice(0, -1)), 38);
+      } else {
+        t = setTimeout(() => {
+          setIdx((i) => (i + 1) % titles.length);
+          setPhase("typing");
+        }, 350);
+      }
+    }
+    return () => clearTimeout(t);
+    // titleA/titleB 는 안정적 문자열이라 typed/phase/idx 변화에만 반응.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [typed, phase, idx, titleA, titleB]);
+
+  const complete = phase === "pausing";
 
   return (
     <section className="relative w-full overflow-hidden bg-background">
@@ -63,25 +90,28 @@ export default function HomeHero({
             {eyebrow}
           </p>
 
-          {/* A(KR) ↔ B(EN) 크로스페이드 — grid로 겹쳐 배치 */}
-          <div className="mt-4 grid">
-            {variants.map((v, i) => (
-              <div
-                key={i}
-                aria-hidden={i !== active}
-                className={`col-start-1 row-start-1 transition-opacity duration-700 ${
-                  i === active ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                <h1 className="whitespace-pre-line text-4xl font-bold leading-[1.25] tracking-tight text-white sm:text-5xl">
-                  {v.title}
-                </h1>
-                <p className="mt-5 text-sm tracking-tight text-white/70">
-                  {v.subtitle}
-                </p>
-              </div>
-            ))}
-          </div>
+          {/* 타이핑되는 제목 (2줄 높이 예약 → 레이아웃 흔들림 방지) */}
+          <h1 className="mt-4 flex min-h-[2.6em] items-start justify-center whitespace-pre-line text-4xl font-bold leading-[1.25] tracking-tight text-white sm:text-5xl">
+            <span>
+              {typed}
+              <span
+                aria-hidden
+                className="ml-0.5 inline-block w-[0.06em] self-stretch"
+                style={{
+                  animation: "blink 1.05s step-end infinite",
+                  borderLeft: "0.08em solid currentColor",
+                }}
+              />
+            </span>
+          </h1>
+
+          <p
+            className={`mt-5 text-sm tracking-tight text-white/70 transition-opacity duration-500 ${
+              complete ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            {subtitles[idx]}
+          </p>
         </div>
       </div>
     </section>
