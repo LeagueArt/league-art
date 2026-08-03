@@ -41,3 +41,7 @@ next-env.d.ts
 
 # bkit tooling snapshots (local noise)
 docs/.pdca-snapshots/
+
+# bkit tooling state (local only, auto-regenerated)
+docs/.bkit-memory.json
+docs/.pdca-status.json
