@@ -10,6 +10,11 @@
   --accent-dark: #9a0705;
 }
 
+html {
+  /* 기본 16px → 18px : 전체 글자 크기 약 2px 확대 (rem 기반이라 전역 적용) */
+  font-size: 112.5%;
+}
+
 html,
 body {
   background-color: #fdfdfd;
@@ -20,15 +25,16 @@ body {
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
   --color-accent-dark: var(--accent-dark);
-  --font-sans: var(--font-suite);
+  /* Arial 우선 — 한글은 Arial에 글리프가 없어 시스템 고딕으로 폴백 */
+  --font-sans: Arial, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", Helvetica, sans-serif;
   --font-mono: var(--font-geist-mono);
-  --font-serif: var(--font-suite);
+  --font-serif: Arial, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", Helvetica, sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-suite), Arial, Helvetica, sans-serif;
+  font-family: Arial, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", Helvetica, sans-serif;
 }
 
 /* 히어로 타이핑 커서 깜빡임 */
