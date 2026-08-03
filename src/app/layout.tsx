@@ -41,8 +41,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: SITE.ogImage,
-        width: 1200,
-        height: 630,
+        width: 2560,
+        height: 1252,
         alt: `${SITE.nameKo} 패션유학학원`,
       },
     ],

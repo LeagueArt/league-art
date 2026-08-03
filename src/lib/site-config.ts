@@ -35,7 +35,8 @@ export const SITE = {
     "서초동 미술학원",
     "의상 메이킹",
   ],
-  ogImage: "/images/hero/hero-main.jpg",
+  // ?v=N — 이미지 교체 시 숫자를 올리면 SNS/메신저 OG 캐시가 새로 갱신된다.
+  ogImage: "/images/hero/hero-main.jpg?v=2",
 } as const;
 
 /**
