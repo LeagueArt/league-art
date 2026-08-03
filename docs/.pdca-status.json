@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-07-15T08:27:19.387Z",
+  "lastUpdated": "2026-08-03T04:37:36.191Z",
   "activeFeatures": [
     "art-studio-website",
     "league-art",
@@ -32,7 +32,8 @@
     "reset-password",
     "members",
     "export",
-    "mypage"
+    "mypage",
+    "me"
   ],
   "primaryFeature": "art-studio-website",
   "features": {
@@ -53,9 +54,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-07-05T10:00:36.913Z",
-        "lastUpdated": "2026-07-15T08:17:46.997Z"
+        "lastUpdated": "2026-08-03T04:37:36.191Z"
       },
-      "lastFile": "/Users/sophia/league-art/src/lib/auth-context.tsx"
+      "lastFile": "/Users/sophia/league-art/src/app/layout.tsx"
     },
     "layout": {
       "phase": "do",
@@ -66,9 +67,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-07-05T10:01:01.253Z",
-        "lastUpdated": "2026-07-15T07:20:08.266Z"
+        "lastUpdated": "2026-07-17T11:18:11.941Z"
       },
-      "lastFile": "/Users/sophia/gitrepo/league-art/src/components/layout/Navbar.tsx"
+      "lastFile": "/Users/sophia/league-art/src/components/layout/Navbar.tsx"
     },
     "home": {
       "phase": "do",
@@ -79,9 +80,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-07-05T10:01:26.745Z",
-        "lastUpdated": "2026-07-14T23:25:20.057Z"
+        "lastUpdated": "2026-07-17T12:17:14.362Z"
       },
-      "lastFile": "/Users/sophia/gitrepo/league-art/src/components/home/SelectedWorks.tsx"
+      "lastFile": "/Users/sophia/league-art/src/components/home/HomeHero.tsx"
     },
     "ui": {
       "phase": "do",
@@ -105,9 +106,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-07-05T10:02:18.187Z",
-        "lastUpdated": "2026-07-15T06:08:16.026Z"
+        "lastUpdated": "2026-07-15T23:53:25.054Z"
       },
-      "lastFile": "/Users/sophia/gitrepo/league-art/src/app/about/page.tsx"
+      "lastFile": "/Users/sophia/league-art/src/components/about/DirectorSection.tsx"
     },
     "page.tsx": {
       "phase": "do",
@@ -157,9 +158,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-07-06T09:02:14.481Z",
-        "lastUpdated": "2026-07-15T01:08:17.021Z"
+        "lastUpdated": "2026-08-03T04:30:19.348Z"
       },
-      "lastFile": "/Users/sophia/gitrepo/league-art/src/components/consult/ConsultForm.tsx"
+      "lastFile": "/Users/sophia/league-art/src/components/consult/ConsultSection.tsx"
     },
     "director": {
       "phase": "do",
@@ -183,9 +184,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-07-06T09:05:01.243Z",
-        "lastUpdated": "2026-07-15T01:39:48.256Z"
+        "lastUpdated": "2026-07-15T23:59:03.188Z"
       },
-      "lastFile": "/Users/sophia/gitrepo/league-art/src/app/curriculum/page.tsx"
+      "lastFile": "/Users/sophia/league-art/src/app/curriculum/page.tsx"
     },
     "admissions": {
       "phase": "do",
@@ -209,9 +210,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-07-06T09:05:36.260Z",
-        "lastUpdated": "2026-07-15T01:40:06.313Z"
+        "lastUpdated": "2026-07-16T00:02:00.943Z"
       },
-      "lastFile": "/Users/sophia/gitrepo/league-art/src/app/faq/page.tsx"
+      "lastFile": "/Users/sophia/league-art/src/app/faq/page.tsx"
     },
     "complete": {
       "phase": "do",
@@ -261,9 +262,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-07-15T01:38:35.297Z",
-        "lastUpdated": "2026-07-15T01:38:35.297Z"
+        "lastUpdated": "2026-07-17T11:11:27.698Z"
       },
-      "lastFile": "/Users/sophia/gitrepo/league-art/src/components/seo/JsonLd.tsx"
+      "lastFile": "/Users/sophia/league-art/src/components/seo/JsonLd.tsx"
     },
     "signup": {
       "phase": "do",
@@ -274,9 +275,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-07-15T01:47:37.098Z",
-        "lastUpdated": "2026-07-15T07:18:52.903Z"
+        "lastUpdated": "2026-07-16T05:29:10.508Z"
       },
-      "lastFile": "/Users/sophia/gitrepo/league-art/src/app/signup/page.tsx"
+      "lastFile": "/Users/sophia/league-art/src/app/signup/page.tsx"
     },
     "admin": {
       "phase": "do",
@@ -287,9 +288,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-07-15T02:20:47.654Z",
-        "lastUpdated": "2026-07-15T08:27:19.387Z"
+        "lastUpdated": "2026-07-17T01:25:39.025Z"
       },
-      "lastFile": "/Users/sophia/league-art/src/app/admin/layout.tsx"
+      "lastFile": "/Users/sophia/league-art/src/app/admin/AdminShell.tsx"
     },
     "consults": {
       "phase": "do",
@@ -300,9 +301,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-07-15T02:21:37.799Z",
-        "lastUpdated": "2026-07-15T02:21:37.799Z"
+        "lastUpdated": "2026-07-16T00:20:34.065Z"
       },
-      "lastFile": "/Users/sophia/gitrepo/league-art/src/app/admin/consults/page.tsx"
+      "lastFile": "/Users/sophia/league-art/src/app/admin/consults/ConsultStatusSelect.tsx"
     },
     "analytics": {
       "phase": "do",
@@ -313,9 +314,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-07-15T03:55:30.723Z",
-        "lastUpdated": "2026-07-15T03:55:30.723Z"
+        "lastUpdated": "2026-07-15T22:25:59.343Z"
       },
-      "lastFile": "/Users/sophia/gitrepo/league-art/src/app/admin/analytics/page.tsx"
+      "lastFile": "/Users/sophia/league-art/src/components/analytics/GoogleAnalytics.tsx"
     },
     "content": {
       "phase": "do",
@@ -326,9 +327,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-07-15T03:55:59.728Z",
-        "lastUpdated": "2026-07-15T03:55:59.728Z"
+        "lastUpdated": "2026-07-15T22:27:48.405Z"
       },
-      "lastFile": "/Users/sophia/gitrepo/league-art/src/app/admin/content/page.tsx"
+      "lastFile": "/Users/sophia/league-art/src/app/admin/content/page.tsx"
     },
     "investors": {
       "phase": "do",
@@ -339,9 +340,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-07-15T03:56:24.997Z",
-        "lastUpdated": "2026-07-15T03:56:24.997Z"
+        "lastUpdated": "2026-07-15T09:08:16.278Z"
       },
-      "lastFile": "/Users/sophia/gitrepo/league-art/src/app/admin/investors/page.tsx"
+      "lastFile": "/Users/sophia/league-art/src/app/admin/investors/page.tsx"
     },
     "supabase": {
       "phase": "do",
@@ -365,9 +366,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-07-15T07:05:23.607Z",
-        "lastUpdated": "2026-07-15T07:05:23.607Z"
+        "lastUpdated": "2026-07-15T23:06:41.469Z"
       },
-      "lastFile": "/Users/sophia/gitrepo/league-art/src/app/auth/callback/route.ts"
+      "lastFile": "/Users/sophia/league-art/src/app/auth/callback/route.ts"
     },
     "forgot-password": {
       "phase": "do",
@@ -430,9 +431,22 @@
       "documents": {},
       "timestamps": {
         "started": "2026-07-15T07:19:40.133Z",
-        "lastUpdated": "2026-07-15T08:18:05.178Z"
+        "lastUpdated": "2026-07-17T01:34:52.089Z"
       },
       "lastFile": "/Users/sophia/league-art/src/app/mypage/page.tsx"
+    },
+    "me": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-07-17T01:34:00.247Z",
+        "lastUpdated": "2026-07-17T01:34:00.247Z"
+      },
+      "lastFile": "/Users/sophia/league-art/src/app/api/me/route.ts"
     }
   },
   "pipeline": {
@@ -443,7 +457,7 @@
   "session": {
     "startedAt": "2026-07-05T09:40:58.125Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-07-15T08:27:19.387Z"
+    "lastActivity": "2026-08-03T04:37:36.191Z"
   },
   "history": [
     {
@@ -1678,6 +1692,618 @@
     {
       "timestamp": "2026-07-15T08:27:19.387Z",
       "feature": "admin",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T09:04:48.448Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T09:05:01.775Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T09:05:09.658Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T09:05:23.883Z",
+      "feature": "consult",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T09:05:30.304Z",
+      "feature": "consult",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T09:05:42.910Z",
+      "feature": "consult",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T09:05:49.472Z",
+      "feature": "consult",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T09:06:13.155Z",
+      "feature": "consults",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T09:07:16.804Z",
+      "feature": "admin",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T09:07:42.880Z",
+      "feature": "analytics",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T09:08:16.278Z",
+      "feature": "investors",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T09:08:49.335Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T09:08:52.951Z",
+      "feature": "content",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T09:08:59.111Z",
+      "feature": "content",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T09:09:09.680Z",
+      "feature": "admin",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T22:25:59.343Z",
+      "feature": "analytics",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T22:26:03.327Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T22:26:14.248Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T22:26:48.932Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T22:26:59.995Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T22:27:14.977Z",
+      "feature": "content",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T22:27:42.759Z",
+      "feature": "content",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T22:27:48.405Z",
+      "feature": "content",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T22:28:10.570Z",
+      "feature": "home",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T22:28:22.438Z",
+      "feature": "home",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T22:28:34.366Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T22:28:38.634Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T22:28:54.008Z",
+      "feature": "about",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T22:29:07.100Z",
+      "feature": "about",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T22:29:17.499Z",
+      "feature": "about",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T22:29:21.416Z",
+      "feature": "curriculum",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T22:29:25.467Z",
+      "feature": "curriculum",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T22:29:41.375Z",
+      "feature": "curriculum",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T22:29:53.509Z",
+      "feature": "faq",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T22:30:16.254Z",
+      "feature": "faq",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T22:52:45.737Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T23:06:41.469Z",
+      "feature": "callback",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T23:51:16.892Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T23:51:57.029Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T23:52:10.580Z",
+      "feature": "about",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T23:52:22.688Z",
+      "feature": "about",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T23:52:28.638Z",
+      "feature": "about",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T23:52:33.906Z",
+      "feature": "about",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T23:53:12.040Z",
+      "feature": "about",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T23:53:17.510Z",
+      "feature": "about",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T23:53:25.054Z",
+      "feature": "about",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T23:56:42.558Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T23:57:28.201Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T23:58:13.886Z",
+      "feature": "curriculum",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T23:58:27.484Z",
+      "feature": "curriculum",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T23:58:35.486Z",
+      "feature": "curriculum",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T23:58:45.001Z",
+      "feature": "curriculum",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T23:58:49.124Z",
+      "feature": "curriculum",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T23:58:53.861Z",
+      "feature": "curriculum",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-15T23:59:03.188Z",
+      "feature": "curriculum",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-16T00:00:13.151Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-16T00:00:57.935Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-16T00:01:44.285Z",
+      "feature": "faq",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-16T00:01:49.319Z",
+      "feature": "faq",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-16T00:01:54.073Z",
+      "feature": "faq",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-16T00:02:00.943Z",
+      "feature": "faq",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-16T00:19:14.622Z",
+      "feature": "consults",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-16T00:19:28.862Z",
+      "feature": "consults",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-16T00:19:37.831Z",
+      "feature": "consults",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-16T00:19:44.259Z",
+      "feature": "consults",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-16T00:20:17.159Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-16T00:20:22.457Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-16T00:20:29.259Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-16T00:20:34.065Z",
+      "feature": "consults",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-16T05:27:55.643Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-16T05:28:11.524Z",
+      "feature": "mypage",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-16T05:28:19.211Z",
+      "feature": "mypage",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-16T05:28:31.249Z",
+      "feature": "mypage",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-16T05:28:58.050Z",
+      "feature": "signup",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-16T05:29:05.344Z",
+      "feature": "signup",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-16T05:29:10.508Z",
+      "feature": "signup",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-17T01:25:10.249Z",
+      "feature": "admin",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-17T01:25:18.050Z",
+      "feature": "admin",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-17T01:25:39.025Z",
+      "feature": "admin",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-17T01:34:00.247Z",
+      "feature": "me",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-17T01:34:16.148Z",
+      "feature": "mypage",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-17T01:34:41.800Z",
+      "feature": "mypage",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-17T01:34:52.089Z",
+      "feature": "mypage",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-17T02:33:10.443Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-17T06:28:01.396Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-17T06:28:11.236Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-17T06:28:29.009Z",
+      "feature": "home",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-17T06:28:38.859Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-17T11:11:27.698Z",
+      "feature": "seo",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-17T11:11:36.384Z",
+      "feature": "home",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-17T11:11:56.966Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-17T11:12:06.993Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-17T11:18:11.941Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-17T11:38:42.199Z",
+      "feature": "home",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-17T11:52:29.417Z",
+      "feature": "home",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-17T12:10:53.841Z",
+      "feature": "home",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-17T12:17:14.362Z",
+      "feature": "home",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-28T08:34:23.785Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-07-28T08:35:23.663Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-08-03T04:30:19.348Z",
+      "feature": "consult",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-08-03T04:37:31.614Z",
+      "feature": "league-art",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-08-03T04:37:36.191Z",
+      "feature": "league-art",
       "phase": "do",
       "action": "updated"
     }
