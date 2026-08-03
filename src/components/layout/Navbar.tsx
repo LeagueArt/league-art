@@ -1,14 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { useAuth } from "@/lib/auth-context";
 import { NAV_ITEMS, CTA_ITEM } from "@/lib/site-config";
 
-/** LEAGUE ART 워드마크 (Figma 로고 재현) + with egüre */
+/** LEAGUE ART 워드마크 (Figma 로고 재현) */
 function Logo({ onClick }: { onClick?: () => void }) {
   return (
     <Link
@@ -24,17 +23,6 @@ function Logo({ onClick }: { onClick?: () => void }) {
           STUDIO
         </span>
       </span>
-      <span className="hidden whitespace-nowrap font-serif text-sm italic text-neutral-400 md:inline md:text-[clamp(0.75rem,1.25vw,1.125rem)]">
-        with
-      </span>
-      <Image
-        src="/logo/equre.png"
-        alt="egüre"
-        width={72}
-        height={27}
-        priority
-        className="h-4 w-auto md:h-[clamp(1.125rem,2vw,1.75rem)]"
-      />
     </Link>
   );
 }
