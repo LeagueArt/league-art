@@ -16,9 +16,8 @@ export default function ConsultSection() {
             상담이 필요하신가요?<span className="text-accent">.</span>
           </h2>
           <p className="mt-5 max-w-md text-base leading-relaxed text-neutral-600">
-            해외 미대 포트폴리오 준비, 지금 어떤 방향으로 시작해야 할지 고민이라면
-            리그아트에서 학생의 현재 작업과 목표 학교에 맞춰 가장 현실적인
-            포트폴리오 방향을 안내해드립니다.
+            포트폴리오의 방향이 고민이라면, 학생의 현재 작업과 목표 학교에 맞는
+            현실적인 준비 방향을 안내해드립니다.
           </p>
           <p className="mt-4 text-xs font-medium uppercase tracking-wider text-neutral-400">
             무료 상담 · 24시간 내 답변
