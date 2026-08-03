@@ -122,7 +122,8 @@ export const CONTENT_SECTIONS: ContentSection[] = [
       { key: "admissions.intro", label: "소개 문단", multiline: true },
       {
         key: "admissions.schools",
-        label: "목표·지원 학교 (한 줄에 하나, '국기 | 국가 | 학교' 형식)",
+        label:
+          "목표·지원 학교 (국가명을 한 줄에, 그 아래 학교는 '- 학교명'으로 한 줄씩. 빈 줄로 국가 구분)",
         multiline: true,
       },
       { key: "admissions.rosterHeadline", label: "합격 실적 · 헤드라인" },
@@ -247,21 +248,31 @@ export const CONTENT_DEFAULTS: Record<string, string> = {
   "admissions.intro":
     "리그아트가 지원·합격을 목표로 하는 세계 최상위 미술·디자인·패션 교육기관입니다. 이 학교들의 평가 기준이 곧 포트폴리오·입시 전략의 기준이 됩니다.",
   "admissions.schools":
-    "🇺🇸 | United States | Parsons School of Design — New York\n" +
-    "🇺🇸 | United States | Fashion Institute of Technology (FIT) — New York\n" +
-    "🇺🇸 | United States | Rhode Island School of Design (RISD) — Providence\n" +
-    "🇺🇸 | United States | School of the Art Institute of Chicago (SAIC) — Chicago\n" +
-    "🇺🇸 | United States | Savannah College of Art and Design (SCAD) — Savannah / Atlanta\n" +
-    "🇺🇸 | United States | Otis College of Art and Design — Los Angeles\n" +
-    "🇬🇧 | United Kingdom | Central Saint Martins (UAL) — London\n" +
-    "🇬🇧 | United Kingdom | London College of Fashion (UAL) — London\n" +
-    "🇬🇧 | United Kingdom | Chelsea College of Arts (UAL) — London\n" +
-    "🇬🇧 | United Kingdom | Royal College of Art — London\n" +
-    "🇬🇧 | United Kingdom | University of Westminster — London\n" +
-    "🇫🇷 | France | Institut Français de la Mode (IFM) — Paris\n" +
-    "🇫🇷 | France | Atelier Chardon Savard — Paris\n" +
-    "🇫🇷 | France | ESMOD Paris — Paris\n" +
-    "🇮🇹 | Italy | Istituto Marangoni — Milan",
+    "🇺🇸 United States\n" +
+    "- Parsons School of Design — New York\n" +
+    "- Fashion Institute of Technology (FIT) — New York\n" +
+    "- Rhode Island School of Design (RISD) — Providence\n" +
+    "- School of the Art Institute of Chicago (SAIC) — Chicago\n" +
+    "- Savannah College of Art and Design (SCAD) — Savannah / Atlanta\n" +
+    "- Otis College of Art and Design — Los Angeles\n" +
+    "\n" +
+    "🇬🇧 United Kingdom\n" +
+    "- Central Saint Martins (UAL) — London\n" +
+    "- London College of Fashion (UAL) — London\n" +
+    "- Chelsea College of Arts (UAL) — London\n" +
+    "- Royal College of Art — London\n" +
+    "- University of Westminster — London\n" +
+    "\n" +
+    "🇫🇷 France\n" +
+    "- Institut Français de la Mode (IFM) — Paris\n" +
+    "- Atelier Chardon Savard — Paris\n" +
+    "- ESMOD Paris — Paris\n" +
+    "\n" +
+    "🇮🇹 Italy\n" +
+    "- Istituto Marangoni — Milan\n" +
+    "\n" +
+    "🇧🇪 Belgium\n" +
+    "- Royal Academy of Fine Arts — Antwerp",
   "admissions.rosterHeadline": "합격 실적",
   "admissions.note":
     "구체적인 합격생 명단과 포트폴리오 사례는 개인정보 보호를 위해 상담 시 안내해 드립니다.",

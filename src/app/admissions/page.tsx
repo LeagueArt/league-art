@@ -12,22 +12,30 @@ export const metadata: Metadata = {
 // 콘텐츠 편집(문구·학교목록) + 합격 실적 DB 변경 시 revalidatePath 로 즉시 갱신.
 export const revalidate = 300;
 
-type SchoolGroup = { flag: string; country: string; schools: string[] };
+type SchoolGroup = { header: string; schools: string[] };
 
-/** "국기 | 국가 | 학교" 형식의 여러 줄 → 국가별 그룹(등장 순서 유지). */
+/**
+ * 학교 목록 파싱 — 편집 친화 형식.
+ *  - 국가 줄: 그대로 헤더가 된다 (예: "🇺🇸 United States").
+ *  - 학교 줄: "-" 또는 "*"로 시작 → 직전 국가의 학교 항목.
+ *  - 빈 줄은 무시. 국가 없이 나온 학교 줄은 헤더 없는 그룹으로 묶인다.
+ */
 function parseSchools(raw: string): SchoolGroup[] {
   const groups: SchoolGroup[] = [];
-  const byCountry = new Map<string, SchoolGroup>();
-  for (const line of raw.split("\n").map((l) => l.trim()).filter(Boolean)) {
-    const [flag, country, school] = line.split("|").map((p) => p.trim());
-    if (!country) continue;
-    let group = byCountry.get(country);
-    if (!group) {
-      group = { flag: flag ?? "", country, schools: [] };
-      byCountry.set(country, group);
-      groups.push(group);
+  let current: SchoolGroup | null = null;
+  for (const line of raw.split("\n").map((l) => l.trim())) {
+    if (!line) continue;
+    const bullet = line.match(/^[-*]\s*(.+)$/);
+    if (bullet) {
+      if (!current) {
+        current = { header: "", schools: [] };
+        groups.push(current);
+      }
+      current.schools.push(bullet[1].trim());
+    } else {
+      current = { header: line, schools: [] };
+      groups.push(current);
     }
-    if (school) group.schools.push(school);
   }
   return groups;
 }
@@ -102,12 +110,9 @@ export default async function AdmissionsPage() {
 
       {/* 목표·지원 학교 목록 (콘텐츠 편집) */}
       <div className="space-y-12 border-t border-neutral-200 pt-10">
-        {groups.map((g) => (
-          <section key={g.country}>
-            <h2 className="flex items-center gap-2 text-lg font-bold">
-              {g.flag && <span aria-hidden>{g.flag}</span>}
-              {g.country}
-            </h2>
+        {groups.map((g, gi) => (
+          <section key={`${g.header}-${gi}`}>
+            <h2 className="text-lg font-bold">{g.header}</h2>
             <ul className="mt-4 grid gap-x-8 gap-y-2 sm:grid-cols-2">
               {g.schools.map((s) => (
                 <li key={s} className="flex gap-3 text-sm text-neutral-700">
