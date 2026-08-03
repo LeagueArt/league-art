@@ -61,7 +61,7 @@ export default function HomeHero({
 
   return (
     <section className="relative w-full overflow-hidden bg-background">
-      <div className="relative aspect-[16/10] max-h-[860px] min-h-[520px] w-full">
+      <div className="relative h-[calc(100svh-80px)] min-h-[460px] w-full md:h-[calc(100svh-100px)]">
         <Image
           src="/images/hero/hero-main.jpg"
           alt="강남 서초동 리그아트 패션유학학원 — 감각과 완성도가 만나는 곳"
