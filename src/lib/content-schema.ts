@@ -113,6 +113,22 @@ export const CONTENT_SECTIONS: ContentSection[] = [
       { key: "benefit.faq10A", label: "FAQ10 · 답변 (빈 줄로 문단 구분)", multiline: true },
     ],
   },
+  {
+    id: "admissions",
+    label: "합격자 명단",
+    fields: [
+      { key: "admissions.eyebrow", label: "상단 영문문구" },
+      { key: "admissions.title", label: "페이지 제목" },
+      { key: "admissions.intro", label: "소개 문단", multiline: true },
+      {
+        key: "admissions.schools",
+        label: "목표·지원 학교 (한 줄에 하나, '국기 | 국가 | 학교' 형식)",
+        multiline: true,
+      },
+      { key: "admissions.rosterHeadline", label: "합격 실적 · 헤드라인" },
+      { key: "admissions.note", label: "하단 안내 문구", multiline: true },
+    ],
+  },
 ];
 
 /** 코드 기본값 = 현재 공개 페이지 실제 카피(폴백/시드). */
@@ -224,6 +240,31 @@ export const CONTENT_DEFAULTS: Record<string, string> = {
   "benefit.faq10Q": "수업은 소수정예로 진행되나요?",
   "benefit.faq10A":
     "네. 리그아트는 학생 개개인의 작업 방향을 깊이 있게 봐야 하는 포트폴리오 수업 특성상 소수정예 방식으로 운영됩니다. 학생마다 목표 학교, 전공, 현재 실력, 작업 성향이 모두 다르기 때문에 개별 피드백과 맞춤형 방향 설정을 중요하게 생각합니다.",
+
+  // ── 합격자 명단(/admissions) ──────────────────────────
+  "admissions.eyebrow": "ADMISSIONS",
+  "admissions.title": "합격자 명단",
+  "admissions.intro":
+    "리그아트가 지원·합격을 목표로 하는 세계 최상위 미술·디자인·패션 교육기관입니다. 이 학교들의 평가 기준이 곧 포트폴리오·입시 전략의 기준이 됩니다.",
+  "admissions.schools":
+    "🇺🇸 | United States | Parsons School of Design — New York\n" +
+    "🇺🇸 | United States | Fashion Institute of Technology (FIT) — New York\n" +
+    "🇺🇸 | United States | Rhode Island School of Design (RISD) — Providence\n" +
+    "🇺🇸 | United States | School of the Art Institute of Chicago (SAIC) — Chicago\n" +
+    "🇺🇸 | United States | Savannah College of Art and Design (SCAD) — Savannah / Atlanta\n" +
+    "🇺🇸 | United States | Otis College of Art and Design — Los Angeles\n" +
+    "🇬🇧 | United Kingdom | Central Saint Martins (UAL) — London\n" +
+    "🇬🇧 | United Kingdom | London College of Fashion (UAL) — London\n" +
+    "🇬🇧 | United Kingdom | Chelsea College of Arts (UAL) — London\n" +
+    "🇬🇧 | United Kingdom | Royal College of Art — London\n" +
+    "🇬🇧 | United Kingdom | University of Westminster — London\n" +
+    "🇫🇷 | France | Institut Français de la Mode (IFM) — Paris\n" +
+    "🇫🇷 | France | Atelier Chardon Savard — Paris\n" +
+    "🇫🇷 | France | ESMOD Paris — Paris\n" +
+    "🇮🇹 | Italy | Istituto Marangoni — Milan",
+  "admissions.rosterHeadline": "합격 실적",
+  "admissions.note":
+    "구체적인 합격생 명단과 포트폴리오 사례는 개인정보 보호를 위해 상담 시 안내해 드립니다.",
 };
 
 /** 편집기가 다루는 전체 키 목록 (API 화이트리스트 검증용). */

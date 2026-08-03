@@ -44,6 +44,41 @@ export async function getConsults(): Promise<{
   }
 }
 
+export type Admission = {
+  id: string;
+  year: number;
+  student: string;
+  school: string;
+  program: string | null;
+  country: string | null;
+  sort_order: number;
+  created_at: string;
+};
+
+/**
+ * 합격 실적 명단 (연도 내림차순 → 수동 정렬 → 생성순).
+ * ready:false = admissions 테이블 미생성(0005 마이그레이션 미적용)/조회 실패.
+ * 공개 페이지·관리자 화면이 함께 쓰며, 실패해도 throw 하지 않아 화면이 죽지 않는다.
+ */
+export async function getAdmissions(): Promise<{
+  rows: Admission[];
+  ready: boolean;
+}> {
+  try {
+    const svc = createAdminClient();
+    const { data, error } = await svc
+      .from("admissions")
+      .select("id, year, student, school, program, country, sort_order, created_at")
+      .order("year", { ascending: false })
+      .order("sort_order", { ascending: true })
+      .order("created_at", { ascending: false });
+    if (error) return { rows: [], ready: false };
+    return { rows: (data ?? []) as Admission[], ready: true };
+  } catch {
+    return { rows: [], ready: false };
+  }
+}
+
 /** KST 기준 오늘 0시(UTC ISO). "오늘 상담" 필터에 사용. */
 function startOfTodayKstISO(): string {
   const now = new Date();

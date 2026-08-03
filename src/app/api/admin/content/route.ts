@@ -20,6 +20,7 @@ const PATH_BY_PREFIX: Record<string, string> = {
   about: "/about",
   curriculum: "/curriculum",
   benefit: "/faq",
+  admissions: "/admissions",
 };
 
 export async function POST(request: Request) {
